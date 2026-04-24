@@ -17,7 +17,7 @@
 7. [Configuration](#configuration)
 8. [Limitations](#limitations)
 
----
+---------
 
 ## Overview
 
