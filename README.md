@@ -1,4 +1,4 @@
-# 🔐 DHCP Security Lab
+# 🔐 DHCP Info Security Lab
 ### Demonstrating DHCP Attacks & Advanced Defenses (IPS + DHCP Snooping)
 
 > **Educational use only.** Run exclusively in an isolated, controlled lab network.
