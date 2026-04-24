@@ -246,3 +246,4 @@ Install:
 apt install hostapd ebtables net-tools
 pip3 install scapy
 ```
+Note- If Rogue Server code doesn't work properly, change required IP Pool and run server.py from attacker machine
