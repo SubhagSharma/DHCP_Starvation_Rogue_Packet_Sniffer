@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C2 — Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --void:     #020508;
+    --deep:     #040d14;
+    --panel:    #071220;
+    --border:   #0f2d47;
+    --glow-g:   #00ff41;
+    --glow-r:   #ff2442;
+    --glow-b:   #00cfff;
+    --glow-y:   #ffd700;
+    --text:     #8db9cc;
+    --bright:   #cce8f4;
+    --muted:    #2a5570;
+    --scan:     rgba(0,255,65,0.03);
+  }
+
+  html, body {
+    width: 100%; min-height: 100vh;
+    background: var(--void);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* ── MATRIX RAIN CANVAS ── */
+  #matrix-bg {
+    position: fixed; inset: 0;
+    z-index: 0;
+    opacity: 0.18;
+  }
+
+  /* ── SCANLINE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 1;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      var(--scan) 2px,
+      var(--scan) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* ── NOISE GRAIN ── */
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: 2;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* ── LAYOUT ── */
+  .wrapper {
+    position: relative; z-index: 10;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    width: 100%; max-width: 1100px;
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 3.5rem;
+    animation: fadedown 0.8s ease both;
+  }
+
+  .skull {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 18px var(--glow-g));
+    animation: skullfloat 4s ease-in-out infinite;
+  }
+
+  @keyframes skullfloat {
+    0%,100% { transform: translateY(0);   filter: drop-shadow(0 0 18px var(--glow-g)); }
+    50%      { transform: translateY(-8px); filter: drop-shadow(0 0 32px var(--glow-g)); }
+  }
+
+  .header-title {
+    font-family: 'VT323', monospace;
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    color: var(--glow-g);
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 8px var(--glow-g), 0 0 30px rgba(0,255,65,0.4);
+    line-height: 1;
+    text-align: center;
+  }
+
+  .header-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .status-bar {
+    display: flex; gap: 1.5rem; align-items: center;
+    margin-top: 1.2rem;
+    flex-wrap: wrap; justify-content: center;
+  }
+
+  .status-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    animation: blink 1.4s ease-in-out infinite;
+  }
+  .dot-g { background: var(--glow-g); box-shadow: 0 0 6px var(--glow-g); }
+  .dot-r { background: var(--glow-r); box-shadow: 0 0 6px var(--glow-r); animation-delay: 0.5s; }
+  .dot-b { background: var(--glow-b); box-shadow: 0 0 6px var(--glow-b); animation-delay: 1s; }
+
+  @keyframes blink {
+    0%,100% { opacity: 1; } 50% { opacity: 0.2; }
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 100%; max-width: 1100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glow-g), var(--glow-b), transparent);
+    margin-bottom: 3rem;
+    opacity: 0.5;
+    animation: fadedown 1s 0.3s ease both;
+  }
+
+  /* ── CARDS GRID ── */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.8rem;
+    width: 100%; max-width: 1100px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex; flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    animation: fadein 0.6s ease both;
+    cursor: pointer;
+  }
+
+  .card:nth-child(1) { animation-delay: 0.2s; --accent: var(--glow-b); }
+  .card:nth-child(2) { animation-delay: 0.4s; --accent: var(--glow-r); }
+  .card:nth-child(3) { animation-delay: 0.6s; --accent: var(--glow-g); }
+
+  .card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* top accent bar */
+  .card-bar {
+    height: 3px;
+    background: var(--accent);
+    box-shadow: 0 0 16px var(--accent);
+    width: 0;
+    transition: width 0.4s ease;
+  }
+  .card:hover .card-bar { width: 100%; }
+
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(0,0,0,0.6),
+                0 0 0 1px var(--accent),
+                inset 0 0 40px rgba(0,0,0,0.3);
+  }
+
+  .card-inner {
+    padding: 1.8rem 2rem 2rem;
+    flex: 1;
+    display: flex; flex-direction: column;
+  }
+
+  .card-port {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+
+  .port-badge {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    color: var(--accent);
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .card-icon {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px var(--accent));
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  .card:hover .card-icon {
+    filter: drop-shadow(0 0 22px var(--accent));
+    transform: scale(1.1);
+  }
+
+  .card-title {
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+    color: var(--bright);
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 8px var(--accent);
+    transition: color 0.2s;
+  }
+  .card:hover .card-title { color: #fff; }
+
+  .card-desc {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.6;
+    font-weight: 300;
+    flex: 1;
+    margin-bottom: 1.4rem;
+  }
+
+  .card-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    border: 1px solid;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+
+  .card:nth-child(1) .tag { border-color: var(--glow-b); color: var(--glow-b); background: rgba(0,207,255,0.07); }
+  .card:nth-child(2) .tag { border-color: var(--glow-r); color: var(--glow-r); background: rgba(255,36,66,0.07); }
+  .card:nth-child(3) .tag { border-color: var(--glow-g); color: var(--glow-g); background: rgba(0,255,65,0.07); }
+
+  .card-launch {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.7rem 1rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .card:hover .card-launch {
+    background: rgba(255,255,255,0.07);
+    border-color: var(--accent);
+  }
+
+  .arrow {
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+  .card:hover .arrow { transform: translateX(5px); }
+
+  /* ── CORNER DECORATIONS ── */
+  .card-corner {
+    position: absolute;
+    width: 14px; height: 14px;
+    border-color: var(--accent);
+    border-style: solid;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  .card:hover .card-corner { opacity: 1; }
+  .card-corner.tl { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
+  .card-corner.tr { top: 8px; right: 8px; border-width: 1px 1px 0 0; }
+  .card-corner.bl { bottom: 8px; left: 8px; border-width: 0 0 1px 1px; }
+  .card-corner.br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 3.5rem;
+    width: 100%; max-width: 1100px;
+    display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    animation: fadein 1s 0.8s ease both;
+  }
+
+  .footer-line {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  .footer-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-align: center;
+  }
+
+  /* ── CLOCK ── */
+  .clock {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: var(--glow-g);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 8px var(--glow-g);
+  }
+
+  /* ── TERMINAL TICKER ── */
+  .ticker-wrap {
+    width: 100%; max-width: 1100px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: rgba(0,255,65,0.03);
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    animation: fadein 0.8s 0.5s ease both;
+  }
+
+  .ticker-label {
+    display: inline-block;
+    background: var(--glow-g);
+    color: var(--void);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  .ticker-content {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--glow-g);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+    vertical-align: middle;
+    padding: 0.3rem 2rem;
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* ── SYSTEM STATS BAR ── */
+  .sysbar {
+    width: 100%; max-width: 1100px;
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    animation: fadein 0.8s 0.4s ease both;
+  }
+
+  .sysbar-item {
+    flex: 1; min-width: 160px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.8rem 1rem;
+    display: flex; flex-direction: column; gap: 0.4rem;
+  }
+
+  .sysbar-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .sysbar-val {
+    font-family: 'VT323', monospace;
+    font-size: 1.4rem;
+    color: var(--bright);
+    line-height: 1;
+  }
+
+  .sysbar-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .sysbar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadedown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── GLITCH EFFECT on title ── */
+  @keyframes glitch1 {
+    0%, 90%, 100% { clip-path: none; transform: none; }
+    91% { clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); transform: translate(-3px, 0); color: var(--glow-r); }
+    93% { clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%); transform: translate(3px, 0); color: var(--glow-b); }
+    95% { clip-path: none; transform: none; color: var(--glow-g); }
+  }
+
+  .glitch { animation: glitch1 6s ease-in-out infinite; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="matrix-bg"></canvas>
+
+<div class="wrapper">
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <div class="skull">💀</div>
+    <div class="header-title glitch">C2 COMMAND CENTER</div>
+    <div class="header-sub">[ DHCP Attack Suite · Local Network · Educational Lab ]</div>
+
+    <div class="status-bar">
+      <div class="status-item"><span class="dot dot-g"></span> MITM ACTIVE</div>
+      <div class="status-item"><span class="dot dot-b"></span> ROGUE DHCP RUNNING</div>
+      <div class="status-item"><span class="dot dot-r"></span> STARVATION ARMED</div>
+      <div class="status-item" style="margin-left:.5rem">
+        <span class="clock" id="clock">--:--:--</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DIVIDER ── -->
+  <div class="divider"></div>
+
+  <!-- ── TICKER ── -->
+  <!-- <div class="ticker-wrap">
+    <span class="ticker-label">SYS LOG</span>
+    <span class="ticker-content" id="ticker">
+      ▸ DHCP DISCOVER intercepted from 192.168.1.140 &nbsp;▸ DNS QUERY: connectivitycheck.gstatic.com &nbsp;▸ HTTP POST captured → c.whatsapp.net &nbsp;▸ ROGUE OFFER sent: 192.168.1.99 &nbsp;▸ STARVATION pool exhausted &nbsp;▸ New victim accepted rogue gateway &nbsp;▸ DNS QUERY: mtalk.google.com &nbsp;▸ Instagram gateway probe detected &nbsp;▸ ARP poisoning nominal &nbsp;▸ 3 devices under interception
+    </span>
+  </div> -->
+
+  <!-- ── SYS STATS ── -->
+  <!-- <div class="sysbar" id="sysbar">
+    <div class="sysbar-item">
+      <div class="sysbar-label">Victims Intercepted</div>
+      <div class="sysbar-val" id="stat-victims">3</div>
+      <div class="sysbar-bar"><div class="sysbar-fill" style="width:60%;background:var(--glow-b)"></div></div>
+    </div>
+    <div class="sysbar-item">
+      <div class="sysbar-label">Packets Captured</div>
+      <div class="sysbar-val" id="stat-packets">0</div>
+      <div class="sysbar-bar"><div class="sysbar-fill" style="width:40%;background:var(--glow-g)"></div></div>
+    </div>
+    <div class="sysbar-item">
+      <div class="sysbar-label">DHCP Pool Used</div>
+      <div class="sysbar-val">87%</div>
+      <div class="sysbar-bar"><div class="sysbar-fill" style="width:87%;background:var(--glow-r)"></div></div>
+    </div>
+    <div class="sysbar-item">
+      <div class="sysbar-label">Active Sessions</div>
+      <div class="sysbar-val">3</div>
+      <div class="sysbar-bar"><div class="sysbar-fill" style="width:30%;background:var(--glow-y)"></div></div>
+    </div>
+    <div class="sysbar-item">
+      <div class="sysbar-label">Uptime</div>
+      <div class="sysbar-val" id="uptime">00:00:00</div>
+      <div class="sysbar-bar"><div class="sysbar-fill" style="width:100%;background:var(--glow-g)"></div></div>
+    </div>
+  </div> -->
+
+  <!-- ── CARDS ── -->
+  <div class="cards">
+
+    <!-- CARD 1: DHCP Server -->
+    <a class="card" href="http://localhost:8502" target="_blank">
+      <div class="card-corner tl"></div>
+      <div class="card-corner tr"></div>
+      <div class="card-corner bl"></div>
+      <div class="card-corner br"></div>
+      <div class="card-bar"></div>
+      <div class="card-inner">
+        <div class="card-port">
+          Module 01
+          <span class="port-badge">:8502</span>
+        </div>
+        <div class="card-icon">🖥️</div>
+        <div class="card-title">ROGUE DHCP SERVER</div>
+        <div class="card-desc">
+          Monitor rogue DHCP offer broadcasts, track victim lease assignments,
+          and observe gateway spoofing in real time. See which devices accepted
+          your forged network config.
+        </div>
+        <div class="card-tags">
+          <span class="tag">DHCP Spoofing</span>
+          <span class="tag">Gateway Hijack</span>
+          <span class="tag">Lease Table</span>
+          <span class="tag">Live Feed</span>
+        </div>
+        <div class="card-launch">
+          Launch Dashboard <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 2: DHCP Starvation -->
+    <a class="card" href="http://localhost:8501" target="_blank">
+      <div class="card-corner tl"></div>
+      <div class="card-corner tr"></div>
+      <div class="card-corner bl"></div>
+      <div class="card-corner br"></div>
+      <div class="card-bar"></div>
+      <div class="card-inner">
+        <div class="card-port">
+          Module 02
+          <span class="port-badge">:8501</span>
+        </div>
+        <div class="card-icon">💀</div>
+        <div class="card-title">DHCP STARVATION</div>
+        <div class="card-desc">
+          Visualise the IP pool exhaustion attack — watch DISCOVER floods,
+          track how many fake leases have been grabbed, and see the legitimate
+          DHCP server choke in real time.
+        </div>
+        <div class="card-tags">
+          <span class="tag">Pool Exhaustion</span>
+          <span class="tag">Flood Monitor</span>
+          <span class="tag">DoS Metrics</span>
+          <span class="tag">Attack Rate</span>
+        </div>
+        <div class="card-launch">
+          Launch Dashboard <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 3: MITM Sniffer -->
+    <a class="card" href="http://localhost:8503" target="_blank">
+      <div class="card-corner tl"></div>
+      <div class="card-corner tr"></div>
+      <div class="card-corner bl"></div>
+      <div class="card-corner br"></div>
+      <div class="card-bar"></div>
+      <div class="card-inner">
+        <div class="card-port">
+          Module 03
+          <span class="port-badge">:8503</span>
+        </div>
+        <div class="card-icon">🕵️</div>
+        <div class="card-title">MITM SNIFFER</div>
+        <div class="card-desc">
+          Full traffic analysis of intercepted victims — DNS queries, HTTP
+          requests, plaintext credentials, device fingerprinting, and
+          per-IP behavioural profiling. The deep intel layer.
+        </div>
+        <div class="card-tags">
+          <span class="tag">DNS Capture</span>
+          <span class="tag">HTTP Intercept</span>
+          <span class="tag">Credentials</span>
+          <span class="tag">Device Profile</span>
+        </div>
+        <div class="card-launch">
+          Launch Dashboard <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-text">
+      ⚠ &nbsp; FOR AUTHORIZED EDUCATIONAL / LAB USE ONLY &nbsp; · &nbsp;
+      ALL ACTIVITY ON LOCAL ISOLATED NETWORK &nbsp; · &nbsp;
+      UNAUTHORIZED USE IS ILLEGAL &nbsp; ⚠
+    </div>
+    <div class="footer-text" style="color: #1a3a5c; margin-top: 0.3rem;">
+      DHCP ATTACK SUITE · v2.0 · LAB ENV
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── MATRIX RAIN ──
+(function() {
+  const canvas = document.getElementById('matrix-bg');
+  const ctx    = canvas.getContext('2d');
+  let W, H, cols, drops;
+  const CHARS  = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01ABCDEF<>[]{}01010011DEADBEEF';
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    cols  = Math.floor(W / 16);
+    drops = Array(cols).fill(1);
+  }
+
+  function draw() {
+    ctx.fillStyle = 'rgba(2,5,8,0.05)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#00ff41';
+    ctx.font = '13px "Share Tech Mono", monospace';
+    for (let i = 0; i < drops.length; i++) {
+      const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+      ctx.globalAlpha = Math.random() * 0.8 + 0.1;
+      ctx.fillText(ch, i * 16, drops[i] * 16);
+      ctx.globalAlpha = 1;
+      if (drops[i] * 16 > H && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  setInterval(draw, 55);
+})();
+
+// ── CLOCK ──
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toTimeString().slice(0,8);
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── UPTIME ──
+const startTime = Date.now();
+function updateUptime() {
+  const s   = Math.floor((Date.now() - startTime) / 1000);
+  const hh  = String(Math.floor(s / 3600)).padStart(2,'0');
+  const mm  = String(Math.floor((s % 3600) / 60)).padStart(2,'0');
+  const ss  = String(s % 60).padStart(2,'0');
+  document.getElementById('uptime').textContent = `${hh}:${mm}:${ss}`;
+}
+setInterval(updateUptime, 1000);
+
+// ── PACKET COUNTER (simulated) ──
+let pktCount = 847;
+function bumpPackets() {
+  pktCount += Math.floor(Math.random() * 8);
+  document.getElementById('stat-packets').textContent = pktCount.toLocaleString();
+}
+setInterval(bumpPackets, 1200);
+
+// ── TICKER: cycle real-ish messages ──
+const tickerMsgs = [
+  '▸ DHCP DISCOVER intercepted from 192.168.1.140 &nbsp; ▸ DNS QUERY: connectivitycheck.gstatic.com &nbsp; ▸ HTTP POST captured → c.whatsapp.net &nbsp; ▸ ROGUE OFFER sent: 192.168.1.99 &nbsp; ▸ STARVATION pool exhausted &nbsp; ▸ New victim accepted rogue gateway &nbsp; ▸ DNS QUERY: mtalk.google.com &nbsp; ▸ Instagram gateway probe detected',
+  '▸ ARP poisoning nominal &nbsp; ▸ 3 devices under interception &nbsp; ▸ Credential capture: 0 so far &nbsp; ▸ DNS bypass attempt via dns.google &nbsp; ▸ Huawei device fingerprinted on .142 &nbsp; ▸ Android device confirmed on .141 &nbsp; ▸ HTTP GET /css/style.min.css intercepted',
+  '▸ Lease table: 218/254 entries consumed &nbsp; ▸ DISCOVER flood rate: 47 pkt/s &nbsp; ▸ Legitimate DHCP server: UNRESPONSIVE &nbsp; ▸ Rogue server: ACTIVE on eth0 &nbsp; ▸ IP forwarding: ENABLED &nbsp; ▸ Capturing DNS + HTTP on port 53/80',
+];
+let tickerIdx = 0;
+const tickerEl = document.getElementById('ticker');
+setInterval(() => {
+  tickerIdx = (tickerIdx + 1) % tickerMsgs.length;
+  tickerEl.textContent = '';
+  tickerEl.innerHTML = tickerMsgs[tickerIdx];
+}, 30000);
+</script>
+</body>
+</html>
