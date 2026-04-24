@@ -1,0 +1,1410 @@
+2026-04-12 14:55:15  [INFO    ]  DHCP-SERVER           [SNOOPING] Loaded 11 existing bindings
+2026-04-12 14:55:15  [INFO    ]  DHCP-SERVER           DHCP Server starting on eth0 (00:e0:6c:38:a8:5b)
+2026-04-12 14:55:15  [INFO    ]  DHCP-SERVER           Pool: 192.168.1.140 – 192.168.1.160  (21 IPs)
+2026-04-12 14:55:15  [INFO    ]  DHCP-SERVER           
+  [1m══════════════════════════════════════════════════════[0m
+  [1m  SCENARIO : [91mVULNERABLE[0m
+  [1m──────────────────────────────────────────────────────[0m
+  IPS (master)              : [91mOFF[0m
+    Rate limiting           : [91mOFF[0m
+    Starvation detection    : [91mOFF[0m
+    MAC/IP block-list       : [91mOFF[0m
+    Pool exhaustion guard   : [91mOFF[0m
+  DHCP Snooping (master)    : [91mOFF[0m
+    Rogue server detection  : [91mOFF[0m
+    Binding enforcement     : [91mOFF[0m
+    Auto-block rogue IP     : [91mOFF[0m
+  [1m══════════════════════════════════════════════════════[0m
+2026-04-12 14:55:15  [WARNING ]  DHCP-SERVER           [91m[!] VULNERABLE MODE — all protections DISABLED. Attacks will succeed.[0m
+2026-04-12 14:55:15  [INFO    ]  DHCP-SERVER           Listening on eth0  (port 67/UDP) ...
+2026-04-12 14:55:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:55:45  [INFO    ]  DHCP-SERVER           Pool available: 21 / 21
+2026-04-12 14:55:45  [INFO    ]  DHCP-SERVER           Active leases : 0
+2026-04-12 14:55:45  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:55:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:56:15  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:56:15  [INFO    ]  DHCP-SERVER           Pool available: 21 / 21
+2026-04-12 14:56:15  [INFO    ]  DHCP-SERVER           Active leases : 0
+2026-04-12 14:56:15  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:56:15  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:56:39  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=9e:bb:eb:9d:e3:af  src_ip=0.0.0.0  pool_left=21
+2026-04-12 14:56:39  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=9e:bb:eb:9d:e3:af  ip=192.168.1.140  pool_remaining=20/21
+2026-04-12 14:56:39  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=20
+2026-04-12 14:56:39  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=9e:bb:eb:9d:e3:af  src_ip=0.0.0.0  pool_left=20
+2026-04-12 14:56:39  [WARNING ]  DHCP-SERVER           [SNOOPING] Binding violation: 9e:bb:eb:9d:e3:af has 192.168.1.141 but requested 192.168.1.140
+2026-04-12 14:56:39  [WARNING ]  DHCP-SERVER           [SNOOPING-OFF] Binding mismatch for 9e:bb:eb:9d:e3:af / 192.168.1.140 — snooping enforcement disabled, continuing
+2026-04-12 14:56:39  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=9e:bb:eb:9d:e3:af  ip=192.168.1.140  pool_remaining=20/21
+2026-04-12 14:56:39  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 9e:bb:eb:9d:e3:af → 192.168.1.140
+2026-04-12 14:56:40  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=20
+2026-04-12 14:56:40  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=20
+2026-04-12 14:56:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:56:45  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 14:56:45  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 14:56:45  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:56:45  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 14:56:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:57:15  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:57:15  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 14:57:15  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 14:57:15  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:57:15  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 14:57:15  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:57:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:57:45  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 14:57:45  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 14:57:45  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:57:45  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 14:57:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:58:15  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:58:15  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 14:58:15  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 14:58:15  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:58:15  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 14:58:15  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:58:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:58:45  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 14:58:45  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 14:58:45  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:58:45  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 14:58:45  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:59:15  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:59:15  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 14:59:15  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 14:59:15  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:59:15  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 14:59:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:59:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 14:59:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 14:59:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 14:59:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 14:59:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 14:59:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:00:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:00:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:00:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:00:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:00:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:00:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:00:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:00:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:00:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:00:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:00:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:00:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:01:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:01:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:01:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:01:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:01:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:01:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:01:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:01:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:01:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:01:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:01:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:01:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:02:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:02:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:02:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:02:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:02:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:02:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:02:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:02:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:02:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:02:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:02:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:02:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:03:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:03:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:03:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:03:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:03:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:03:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:03:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:03:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:03:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:03:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:03:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:03:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:04:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:04:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:04:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:04:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:04:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:04:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:04:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:04:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:04:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:04:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:04:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:04:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:05:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:05:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:05:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:05:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:05:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:05:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:05:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:05:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:05:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:05:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:05:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:05:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:06:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:06:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:06:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:06:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:06:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:06:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:06:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:06:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:06:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:06:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:06:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:06:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:07:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:07:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:07:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:07:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:07:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:07:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:07:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:07:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:07:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:07:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:07:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:07:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:08:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:08:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:08:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:08:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:08:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:08:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:08:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:08:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:08:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:08:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:08:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:08:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:09:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:09:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:09:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:09:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:09:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:09:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:09:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:09:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:09:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:09:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:09:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:09:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:10:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:10:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:10:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:10:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:10:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:10:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:10:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:10:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:10:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:10:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:10:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:10:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:11:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:11:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:11:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:11:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:11:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:11:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:11:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:11:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:11:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:11:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:11:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:11:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:12:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:12:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:12:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:12:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:12:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:12:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:12:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:12:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:12:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:12:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:12:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:12:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:13:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:13:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:13:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:13:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:13:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:13:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:13:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:13:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:13:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:13:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:13:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:13:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:14:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:14:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:14:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:14:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:14:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:14:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:14:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:14:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:14:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:14:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:14:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:14:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:15:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:15:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:15:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:15:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:15:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:15:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:15:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:15:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:15:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:15:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:15:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:15:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:16:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:16:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:16:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:16:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:16:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:16:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:16:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:16:46  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:16:46  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:16:46  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:16:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:16:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:17:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:17:16  [INFO    ]  DHCP-SERVER           Pool available: 20 / 21
+2026-04-12 15:17:16  [INFO    ]  DHCP-SERVER           Active leases : 1
+2026-04-12 15:17:16  [INFO    ]  DHCP-SERVER           Snooping table: 11 bindings
+2026-04-12 15:17:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:17:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:17:26  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=20
+2026-04-12 15:17:26  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:17:26  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:27  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:17:27  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:17:27  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 15:17:27  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:27  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:37  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:17:37  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:17:37  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:39  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:17:39  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:17:39  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:40  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:17:40  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:17:40  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 15:17:40  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:40  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:17:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:17:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:17:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:17:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:17:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:17:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:17:50  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:17:50  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:17:50  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:51  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:17:51  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:17:51  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 15:17:51  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:17:51  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:18:01  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:18:01  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:18:01  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:18:02  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:18:02  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:18:02  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 15:18:02  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:18:02  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:18:12  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:18:12  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:18:13  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:18:14  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 15:18:14  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 15:18:14  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 15:18:14  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:18:14  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 15:18:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:18:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:18:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:18:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:18:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:18:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:18:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:18:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:18:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:18:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:18:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:18:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:18:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:18:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:19:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:19:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:19:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:19:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:19:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:19:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:19:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:19:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:19:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:19:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:19:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:19:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:19:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:19:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:20:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:20:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:20:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:20:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:20:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:20:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:20:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:20:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:20:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:20:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:20:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:20:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:20:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:20:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:21:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:21:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:21:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:21:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:21:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:21:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:21:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:21:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:21:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:21:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:21:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:21:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:21:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:21:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:22:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:22:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:22:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:22:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:22:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:22:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:22:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:22:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:22:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:22:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:22:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:22:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:22:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:22:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:23:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:23:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:23:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:23:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:23:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:23:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:23:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:23:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:23:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:23:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:23:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:23:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:23:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:23:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:24:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:24:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:24:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:24:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:24:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:24:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:24:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:24:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:24:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:24:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:24:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:24:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:24:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:24:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:25:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:25:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:25:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:25:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:25:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:25:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:25:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:25:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:25:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:25:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:25:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:25:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:25:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:25:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:26:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:26:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:26:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:26:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:26:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:26:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:26:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:26:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:26:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:26:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:26:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:26:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:26:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:26:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:27:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:27:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:27:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:27:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:27:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:27:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:27:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:27:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:27:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:27:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:27:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:27:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:27:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:27:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:28:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:28:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:28:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:28:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:28:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:28:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:28:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:28:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:28:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:28:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:28:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:28:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:28:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:28:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:29:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:29:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:29:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:29:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:29:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:29:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:29:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:29:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:29:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:29:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:29:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:29:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:29:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:29:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:30:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:30:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:30:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:30:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:30:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:30:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:30:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:30:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:30:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:30:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:30:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:30:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:30:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:30:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:31:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:31:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:31:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:31:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:31:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:31:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:31:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:31:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:31:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:31:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:31:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:31:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:31:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:31:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:32:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:32:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:32:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:32:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:32:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:32:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:32:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:32:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:32:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:32:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:32:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:32:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:32:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:32:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:33:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:33:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:33:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:33:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:33:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:33:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:33:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:33:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:33:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:33:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:33:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:33:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:33:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:33:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:34:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:34:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:34:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:34:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:34:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:34:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:34:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:34:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:34:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:34:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:34:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:34:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:34:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:34:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:35:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:35:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:35:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:35:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:35:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:35:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:35:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:35:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:35:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:35:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:35:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:35:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:35:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:35:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:36:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:36:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:36:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:36:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:36:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:36:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:36:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:36:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:36:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:36:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:36:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:36:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:36:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:36:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:37:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:37:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:37:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:37:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:37:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:37:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:37:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:37:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:37:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:37:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:37:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:37:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:37:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:37:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:38:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:38:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:38:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:38:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:38:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:38:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:38:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:38:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:38:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:38:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:38:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:38:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:38:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:38:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:39:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:39:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:39:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:39:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:39:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:39:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:39:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:39:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:39:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:39:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:39:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:39:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:39:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:39:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:40:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:40:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:40:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:40:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:40:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:40:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:40:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:40:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:40:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:40:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:40:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:40:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:40:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:40:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:41:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:41:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:41:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:41:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:41:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:41:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:41:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:41:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:41:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:41:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:41:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:41:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:41:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:41:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:42:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:42:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:42:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:42:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:42:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:42:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:42:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:42:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:42:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:42:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:42:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:42:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:42:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:42:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:43:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:43:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:43:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:43:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:43:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:43:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:43:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:43:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:43:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:43:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:43:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:43:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:43:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:43:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:44:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:44:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:44:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:44:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:44:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:44:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:44:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:44:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:44:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:44:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:44:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:44:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:44:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:44:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:45:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:45:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:45:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:45:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:45:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:45:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:45:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:45:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:45:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:45:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:45:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:45:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:45:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:45:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:46:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:46:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:46:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:46:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:46:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:46:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:46:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:46:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:46:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:46:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:46:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:46:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:46:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:46:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:47:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:47:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:47:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:47:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:47:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:47:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:47:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:47:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:47:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:47:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:47:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:47:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:47:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:47:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:48:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:48:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:48:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:48:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:48:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:48:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:48:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:48:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:48:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:48:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:48:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:48:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:48:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:48:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:49:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:49:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:49:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:49:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:49:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:49:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:49:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:49:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:49:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:49:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:49:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:49:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:49:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:49:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:50:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:50:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:50:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:50:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:50:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:50:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:50:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:50:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:50:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:50:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:50:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:50:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:50:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:50:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:51:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:51:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:51:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:51:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:51:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:51:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:51:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:51:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:51:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:51:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:51:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:51:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:51:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:51:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:52:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:52:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:52:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:52:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:52:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:52:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:52:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:52:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:52:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:52:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:52:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:52:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:52:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:52:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:53:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:53:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:53:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:53:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:53:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:53:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:53:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:53:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:53:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:53:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:53:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:53:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:53:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:53:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:54:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:54:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:54:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:54:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:54:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:54:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:54:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:54:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:54:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:54:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:54:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:54:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:54:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:54:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:55:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:55:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:55:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:55:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:55:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:55:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:55:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:55:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:55:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:55:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:55:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:55:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:55:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:55:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:56:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:56:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:56:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:56:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:56:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:56:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:56:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:56:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:56:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:56:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:56:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:56:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:56:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:56:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:57:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:57:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:57:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:57:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:57:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:57:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:57:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:57:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:57:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:57:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:57:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:57:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:57:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:57:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:58:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:58:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:58:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:58:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:58:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:58:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:58:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:58:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:58:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:58:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:58:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:58:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:58:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:58:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:59:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:59:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:59:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:59:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:59:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:59:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:59:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:59:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 15:59:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 15:59:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 15:59:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 15:59:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 15:59:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 15:59:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:00:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:00:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:00:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:00:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:00:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:00:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:00:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:00:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:00:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:00:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:00:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:00:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:00:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:00:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:01:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:01:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:01:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:01:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:01:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:01:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:01:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:01:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:01:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:01:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:01:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:01:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:01:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:01:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:02:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:02:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:02:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:02:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:02:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:02:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:02:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:02:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:02:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:02:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:02:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:02:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:02:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:02:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:03:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:03:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:03:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:03:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:03:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:03:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:03:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:03:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:03:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:03:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:03:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:03:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:03:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:03:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:04:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:04:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:04:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:04:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:04:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:04:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:04:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:04:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:04:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:04:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:04:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:04:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:04:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:04:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:05:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:05:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:05:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:05:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:05:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:05:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:05:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:05:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:05:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:05:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:05:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:05:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:05:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:05:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:06:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:06:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:06:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:06:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:06:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:06:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:06:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:06:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:06:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:06:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:06:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:06:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:06:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:06:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:07:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:07:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:07:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:07:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:07:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:07:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:07:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:07:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:07:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:07:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:07:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:07:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:07:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:07:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:08:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:08:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:08:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:08:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:08:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:08:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:08:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:08:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:08:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:08:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:08:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:08:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:08:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:08:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:09:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:09:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:09:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:09:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:09:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:09:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:09:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:09:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:09:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:09:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:09:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:09:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:09:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:09:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:10:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:10:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:10:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:10:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:10:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:10:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:10:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:10:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:10:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:10:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:10:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:10:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:10:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:10:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:11:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:11:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:11:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:11:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:11:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:11:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:11:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:11:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:11:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:11:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:11:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:11:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:11:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:11:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:12:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:12:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:12:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:12:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:12:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:12:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:12:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:12:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:12:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:12:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:12:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:12:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:12:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:12:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:13:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:13:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:13:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:13:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:13:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:13:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:13:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:13:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:13:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:13:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:13:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:13:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:13:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:13:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:14:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:14:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:14:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:14:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:14:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:14:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:14:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:14:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:14:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:14:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:14:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:14:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:14:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:14:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:15:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:15:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:15:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:15:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:15:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:15:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:15:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:15:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:15:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:15:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:15:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:15:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:15:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:15:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:16:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:16:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:16:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:16:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:16:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:16:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:16:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:16:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:16:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:16:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:16:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:16:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:16:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:16:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:17:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:17:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:17:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:17:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:17:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:17:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:17:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:17:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:17:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:17:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:17:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:17:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:17:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:17:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:18:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:18:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:18:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:18:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:18:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:18:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:18:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:18:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:18:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:18:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:18:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:18:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:18:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:18:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:19:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:19:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:19:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:19:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:19:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:19:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:19:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:19:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:19:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:19:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:19:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:19:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:19:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:19:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:20:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:20:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:20:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:20:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:20:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:20:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:20:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:20:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:20:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:20:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:20:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:20:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:20:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:20:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:21:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:21:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:21:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:21:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:21:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:21:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:21:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:21:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:21:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:21:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:21:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:21:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:21:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:21:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:22:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:22:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:22:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:22:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:22:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:22:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:22:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:22:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:22:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:22:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:22:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:22:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:22:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:22:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:23:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:23:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:23:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:23:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:23:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:23:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:23:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:23:35  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:23:35  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:23:35  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:23:36  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:23:36  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:23:36  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:23:36  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:23:36  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:23:46  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:23:47  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:23:47  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:23:47  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:23:47  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:23:47  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:24:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:24:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:24:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:24:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:24:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:24:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:24:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:24:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:24:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:24:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:24:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:24:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:24:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:24:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:07  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:08  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:08  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:08  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:25:08  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:08  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:09  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:09  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:09  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:25:09  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:09  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:25:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:25:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:25:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:25:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:25:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:25:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:25:19  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:19  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:19  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:20  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:20  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:20  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:25:20  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:20  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:30  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:30  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:30  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:31  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:31  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:31  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:25:31  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:31  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:25:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:25:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:25:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:25:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:25:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:25:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:25:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:25:59  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:25:59  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:25:59  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:26:01  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:26:01  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:26:01  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:26:02  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:26:02  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:26:02  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:26:02  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:26:02  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:26:12  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:26:12  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:26:12  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:26:13  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:26:13  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:26:13  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:26:13  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:26:13  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:26:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:26:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:26:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:26:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:26:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:26:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:26:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:26:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:26:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:26:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:26:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:26:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:26:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:26:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [RX] DISCOVER   src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [OFFER] ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:27:10  [INFO    ]  DHCP-SERVER           [RX] OFFER      src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:27:12  [INFO    ]  DHCP-SERVER           [RX] REQUEST    src_mac=28:c1:a0:ed:69:83  src_ip=0.0.0.0  pool_left=19
+2026-04-12 16:27:12  [INFO    ]  DHCP-SERVER           [ACK]   ──▶  mac=28:c1:a0:ed:69:83  ip=192.168.1.141  pool_remaining=19/21
+2026-04-12 16:27:12  [INFO    ]  DHCP-SERVER           [SNOOPING] Binding added: 28:c1:a0:ed:69:83 → 192.168.1.141
+2026-04-12 16:27:12  [INFO    ]  DHCP-SERVER           [RX] NAK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:27:12  [INFO    ]  DHCP-SERVER           [RX] ACK        src_mac=00:e0:6c:38:a8:5b  src_ip=192.168.1.2  pool_left=19
+2026-04-12 16:27:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:27:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:27:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:27:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:27:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:27:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:27:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:27:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:27:46  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:27:46  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:27:46  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:27:46  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:27:46  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:27:46  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:28:16  [INFO    ]  DHCP-SERVER           ==================================================
+2026-04-12 16:28:16  [INFO    ]  DHCP-SERVER           Pool available: 19 / 21
+2026-04-12 16:28:16  [INFO    ]  DHCP-SERVER           Active leases : 2
+2026-04-12 16:28:16  [INFO    ]  DHCP-SERVER           Snooping table: 12 bindings
+2026-04-12 16:28:16  [INFO    ]  DHCP-SERVER             9e:bb:eb:9d:e3:af  →  192.168.1.140
+2026-04-12 16:28:16  [INFO    ]  DHCP-SERVER             28:c1:a0:ed:69:83  →  192.168.1.141
+2026-04-12 16:28:16  [INFO    ]  DHCP-SERVER           ==================================================

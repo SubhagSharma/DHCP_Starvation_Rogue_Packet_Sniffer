@@ -1,0 +1,32 @@
+2026-04-12 14:33:34  [WARNING ]  STARVATION            Interface   : eth0  (own MAC: 00:e0:6c:38:a8:5b)
+  Target      : 192.168.1.2:67
+  Packet count: 200
+  Interval    : 0.05s
+  NOTE: broadcast flag 0x8000 set — server will broadcast OFFERs
+
+2026-04-12 14:33:34  [INFO    ]  STARVATION            [RECEIVER] Started — watching port 68 for server OFFERs ...
+2026-04-12 14:33:34  [WARNING ]  STARVATION            [OFFER ◀] server=192.168.1.1  offered_ip=[93m192.168.1.100[0m  pool_slots_consumed=1  total_offers=1
+2026-04-12 14:33:35  [WARNING ]  STARVATION            [OFFER ◀] server=192.168.1.1  offered_ip=[93m192.168.1.101[0m  pool_slots_consumed=2  total_offers=2
+2026-04-12 14:33:35  [WARNING ]  STARVATION            [OFFER ◀] server=192.168.1.1  offered_ip=[93m192.168.1.102[0m  pool_slots_consumed=3  total_offers=3
+2026-04-12 14:33:35  [WARNING ]  STARVATION            [OFFER ◀] server=192.168.1.1  offered_ip=[93m192.168.1.103[0m  pool_slots_consumed=4  total_offers=4
+2026-04-12 14:33:35  [INFO    ]  STARVATION            [TX] sent=10    last_mac=52:62:02:89:89:4b  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:36  [INFO    ]  STARVATION            [TX] sent=20    last_mac=f6:d2:30:65:26:0e  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:37  [INFO    ]  STARVATION            [TX] sent=30    last_mac=b8:fe:59:d1:56:45  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:38  [INFO    ]  STARVATION            [TX] sent=40    last_mac=e6:d4:8c:c3:6e:ea  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:39  [INFO    ]  STARVATION            [TX] sent=50    last_mac=aa:b1:23:f7:ae:83  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:40  [INFO    ]  STARVATION            [TX] sent=60    last_mac=b4:7b:2d:2f:1c:da  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:41  [INFO    ]  STARVATION            [TX] sent=70    last_mac=12:04:00:bb:aa:1d  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:42  [INFO    ]  STARVATION            [TX] sent=80    last_mac=ac:44:d2:f0:3b:7b  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:42  [INFO    ]  STARVATION            [TX] sent=90    last_mac=8e:13:57:fc:b1:c0  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:43  [INFO    ]  STARVATION            [TX] sent=100   last_mac=a2:f0:ad:98:0a:6e  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:44  [INFO    ]  STARVATION            [TX] sent=110   last_mac=a2:5d:7d:29:3d:49  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:45  [INFO    ]  STARVATION            [TX] sent=120   last_mac=88:61:bf:b5:ae:be  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:46  [INFO    ]  STARVATION            [TX] sent=130   last_mac=46:28:97:c8:63:e9  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:47  [INFO    ]  STARVATION            [TX] sent=140   last_mac=50:71:98:aa:56:e7  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:48  [INFO    ]  STARVATION            [TX] sent=150   last_mac=1e:f7:e7:9d:6a:a7  offers_back=4  unique_pool_slots_consumed=4
+2026-04-12 14:33:49  [WARNING ]  STARVATION            [OFFER ◀] server=192.168.1.1  offered_ip=[93m192.168.1.104[0m  pool_slots_consumed=5  total_offers=5
+2026-04-12 14:33:49  [WARNING ]  STARVATION            [OFFER ◀] server=192.168.1.1  offered_ip=[93m192.168.1.105[0m  pool_slots_consumed=6  total_offers=6
+2026-04-12 14:33:49  [INFO    ]  STARVATION            [TX] sent=160   last_mac=32:2a:68:98:3c:78  offers_back=6  unique_pool_slots_consumed=6
+2026-04-12 14:33:50  [INFO    ]  STARVATION            [TX] sent=170   last_mac=76:26:b1:7e:a1:93  offers_back=6  unique_pool_slots_consumed=6
+2026-04-12 14:33:51  [INFO    ]  STARVATION            [TX] sent=180   last_mac=6a:38:30:02:1f:b4  offers_back=6  unique_pool_slots_consumed=6
+2026-04-12 14:33:51  [INFO    ]  STARVATION            [TX] sent=190   last_mac=c8:70:00:58:e0:5f  offers_back=6  unique_pool_slots_consumed=6
