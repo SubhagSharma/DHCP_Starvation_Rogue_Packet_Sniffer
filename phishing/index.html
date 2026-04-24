@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #202124;
+      color: #e8eaed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 450px;
+      background: #292a2d;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      padding: 48px 40px 36px;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .google-logo {
+      width: 32px;
+      height: 32px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #9aa0a6;
+      margin-bottom: 32px;
+    }
+
+    .input-container {
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px 14px;
+      font-size: 16px;
+      background: #292a2d;
+      border: 1px solid #5f6368;
+      border-radius: 4px;
+      color: #e8eaed;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    input:focus {
+      border-color: #8ab4f8;
+      box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.3);
+    }
+
+    .error-message {
+      color: #f28b82;
+      font-size: 12px;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .forgot-email {
+      color: #8ab4f8;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .guest-mode {
+      font-size: 14px;
+      color: #9aa0a6;
+      margin: 32px 0 24px;
+      line-height: 1.5;
+    }
+
+    .guest-mode a {
+      color: #8ab4f8;
+      text-decoration: none;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+    }
+
+    .create-account {
+      color: #8ab4f8;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .next-btn {
+      background: #8ab4f8;
+      color: #202124;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .next-btn:disabled {
+      background: #5f6368;
+      color: #9aa0a6;
+      cursor: not-allowed;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #9aa0a6;
+    }
+
+    .footer a {
+      color: #9aa0a6;
+      text-decoration: none;
+      margin-left: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="logo">
+      <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.51h5.92c-.25 1.36-.99 2.52-2.1 3.3v2.62h3.4c1.99-1.83 3.14-4.53 3.14-7.68z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.4-2.62c-.94.63-2.14 1-3.88 1-2.98 0-5.51-2.01-6.41-4.71H1.65v2.95C3.37 20.8 7.4 23 12 23z" fill="#34A853"/>
+        <path d="M5.59 14.01c-.23-.67-.36-1.38-.36-2.11s.13-1.44.36-2.11V7H1.65C.59 8.8 0 10.85 0 13s.59 4.2 1.65 5.99l3.94-3.98z" fill="#FBBC05"/>
+        <path d="M12 4.75c1.77 0 3.36.61 4.61 1.81l3.45-3.45C17.45 1.09 14.97 0 12 0 7.4 0 3.37 2.2 1.65 5.99L5.59 9.94c.9-2.7 3.43-4.71 6.41-4.71z" fill="#EA4335"/>
+      </svg>
+      <span>Sign in</span>
+    </div>
+
+    <p class="subtitle">to continue to HTTP Forever</p>
+
+    <div class="input-container">
+      <input type="text" id="emailInput" placeholder="Email or phone" autocomplete="off">
+      <div class="error-message" id="errorMsg"></div>
+    </div>
+
+
+    <div class="guest-mode">
+      Not your computer? Use a Private Window to sign in. 
+      <a href="#">Learn more about using Guest mode</a>
+    </div>
+
+    <div class="buttons">
+      <a href="#" class="create-account"></a>
+      <button class="next-btn" id="nextBtn" disabled>Next</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>English (United States) ▼</div>
+    <div>
+      <a href="#">Help</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById('emailInput');
+    const nextBtn = document.getElementById('nextBtn');
+    const errorMsg = document.getElementById('errorMsg');
+
+    const allowedDomains = [
+      '@gmail.com',
+      '@iitjammu.ac.in',
+      '@yahoo.com'
+    ];
+
+    // Enable/Disable Next button based on input
+    function toggleButton() {
+      if (emailInput.value.trim().length > 0) {
+        nextBtn.disabled = false;
+      } else {
+        nextBtn.disabled = true;
+      }
+    }
+
+    // Validate email
+    function isValidEmail(email) {
+      const lowerEmail = email.toLowerCase().trim();
+      return allowedDomains.some(domain => lowerEmail.endsWith(domain));
+    }
+
+    // Show error
+    function showError(message) {
+      errorMsg.textContent = message;
+      errorMsg.style.display = 'block';
+      emailInput.style.borderColor = '#f28b82';
+    }
+
+    // Clear error
+    function clearError() {
+      errorMsg.style.display = 'none';
+      emailInput.style.borderColor = '#8ab4f8';
+    }
+
+    // Main Next button handler
+    function handleNext() {
+      const email = emailInput.value.trim();
+      clearError();
+
+      if (email === '') {
+        showError("Enter an email or phone number");
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showError("Enter a valid email or phone number");
+        return;
+      }
+
+      // Valid email → Redirect
+      nextBtn.textContent = 'Loading...';
+      nextBtn.disabled = true;
+
+      setTimeout(() => {
+        window.location.href = "https://iitjammu.ac.in/cybersecurity-awareness/";
+      }, 800);
+    }
+
+    // Event Listeners
+    emailInput.addEventListener('input', () => {
+      toggleButton();
+      clearError();
+    });
+
+    nextBtn.addEventListener('click', handleNext);
+
+    // Allow pressing Enter key
+    emailInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleNext();
+      }
+    });
+
+    // Focus input on load
+    window.onload = () => {
+      emailInput.focus();
+    };
+  </script>
+
+</body>
+</html>
