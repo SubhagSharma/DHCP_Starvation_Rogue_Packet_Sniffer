@@ -19,7 +19,7 @@ All tunable parameters live here. Import this in every module.
 # ┌─────────────────────────────────────────────────────┐
 # │  ★  CHANGE THIS TO SWITCH THE ENTIRE LAB MODE  ★   │
 # └─────────────────────────────────────────────────────┘
-SCENARIO = "CUSTOM"      # "VULNERABLE" | "PROTECTED" | "CUSTOM"
+SCENARIO = "PROTECTED"      # "VULNERABLE" | "PROTECTED" | "CUSTOM"
 
 
 # ═══════════════════════════════════════════════════════
